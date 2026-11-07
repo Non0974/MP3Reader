@@ -10,8 +10,8 @@ const int PIN_SDA      = 32;
 const int PIN_SCL      = 33;
 
 // Choisis la ligne qui correspond à ton écran (une seule des deux)
-U8G2_SSD1306_128X64_NONAME_F_HW_I2C u8g2(U8G2_R0, U8X8_PIN_NONE);
-// U8G2_SH1106_128X64_NONAME_F_HW_I2C u8g2(U8G2_R0, U8X8_PIN_NONE);
+//U8G2_SSD1306_128X64_NONAME_F_HW_I2C u8g2(U8G2_R0, U8X8_PIN_NONE);
+U8G2_SH1106_128X64_NONAME_F_HW_I2C u8g2(U8G2_R0, U8X8_PIN_NONE);
 
 AudioInfo info(44100, 2, 16);
 SineWaveGenerator<int16_t> sineWave(16000);
@@ -47,7 +47,7 @@ void drawScreen() {
   u8g2.clearBuffer();
 
   u8g2.setFont(u8g2_font_ncenB10_tr);
-  u8g2.drawStr(0, 14, "Test sinus");
+  u8g2.drawStr(0, 14, "Test boutons");
 
   u8g2.setFont(u8g2_font_7x13_tr);
   u8g2.drawStr(0, 34, playing ? "Lecture" : "Pause");
